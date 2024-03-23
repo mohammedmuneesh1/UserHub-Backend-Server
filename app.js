@@ -32,7 +32,10 @@ const limiter = rateLimit({
 app.use(cors());
 app.use(helmet());
 app.use(express.json({limit:"10mb"}));
-// app.use(limiter);
+app.use(limiter);
+app.use("/",(req,res)=>{
+    res.send("api working");
+})
 
 app.use("/user",userRouter)
 
