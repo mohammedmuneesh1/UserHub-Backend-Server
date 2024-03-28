@@ -35,7 +35,6 @@ app.use(cors({
     allowedHeaders:["Content"],
     // credentials: true   --->  such as cookies, authorization headers, etc. By default, credentials are not allowed (false).
     allowedHeaders: ['Content-Type', 'Authorization'],
-    
 
 }));
 app.use(helmet());

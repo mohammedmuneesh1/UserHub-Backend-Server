@@ -9,7 +9,7 @@
     "joi": "^17.12.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.3",
-    "node": "^21.7.1"
+    "node": "^18.20.0"
   },
   "name": "javascript-login-backend",
   "version": "1.0.0",
