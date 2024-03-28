@@ -29,15 +29,16 @@ const limiter = rateLimit({
     windowMs:60*1000
 })
 
-app.use(cors({
-    methods:["GET","POST","DELETE","PUT"],
-    origin:"http://userhub-backend-server.onrender.com/",
-    allowedHeaders:["Content"],
-    // credentials: true   --->  such as cookies, authorization headers, etc. By default, credentials are not allowed (false).
-    allowedHeaders: ['Content-Type', 'Authorization'],
+// app.use(cors({
+//     methods:["GET","POST","DELETE","PUT"],
+//     origin:"http://userhub-backend-server.onrender.com/",
+//     allowedHeaders:["Content"],
+//     // credentials: true   --->  such as cookies, authorization headers, etc. By default, credentials are not allowed (false).
+//     allowedHeaders: ['Content-Type', 'Authorization'],
 
-}));
-app.use(helmet());
+// }));
+app.use(cors());
+// app.use(helmet());
 app.use(express.json({limit:"10mb"}));
 app.use(limiter);
 app.use("/user",userRouter)
