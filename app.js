@@ -4,6 +4,8 @@ const helmet = require("helmet");
 const cors = require("cors")
 const rateLimit = require("express-rate-limit");
 const mongoose = require("mongoose");
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('./swagger_output.json')
 dotenv.config()
 const app = express();
 const Port = process.env.PORT;
@@ -40,14 +42,14 @@ const limiter = rateLimit({
 app.use(cors());
 // app.use(helmet());
 app.use(express.json({limit:"10mb"}));
-app.use(limiter);
+// app.use(limiter);
 app.use("/user",userRouter)
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 
 app.listen(Port,()=>{
   console.log("running successfully",Port);
 })
-
 
 
 

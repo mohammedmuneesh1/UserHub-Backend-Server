@@ -5,7 +5,6 @@ const STATUS = require("../constant/constant");
 
 async function userRegister(req, res) {
   const obj = req.body;
-  console.log(req.body);
   const data = await userCollection.findOne({ userName: obj.userName });
   if (data) {
     return res

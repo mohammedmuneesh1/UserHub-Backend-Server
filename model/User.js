@@ -33,3 +33,8 @@ const userSchema = new Schema({
 const userCollection = model("user",userSchema);
 
 module.exports = userCollection;
+
+// "parameters":[{
+//   "name":"userName",
+//   "type":"string"
+// }]
